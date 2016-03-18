@@ -22,14 +22,12 @@ invisible()
 Print a scheduleR_config or save it to a file as JSON.
 }
 \examples{
-\dontrun{
 x <- scheduleR_config()
 x
 f <- tempfile()
 print(x, toJSON=TRUE, file = f)
 
 jsonlite::fromJSON(f, simplifyVector = FALSE)
-}
 }
 \seealso{
 \code{\link{scheduleR_config}}

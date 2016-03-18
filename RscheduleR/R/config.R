@@ -17,7 +17,6 @@
 #' @param db a full db list object if not specified through db.url and db.suffix
 #' @return a list with scheduleR configuration settings which can be used by the scheduleR application
 #' @examples
-#' \dontrun{
 #' x <- scheduleR_config()
 #' str(x)
 #' x <- scheduleR_config(db.host = "19.19.19.19", 
@@ -26,7 +25,6 @@
 #'    mailer.auth.pass = "abc123")
 #' str(x)
 #' jsonlite::toJSON(x)
-#' }
 scheduleR_config <- function(uploadDir = "/home/scheduler/scripts",
                              errorNotificationMailAddresses,
                              mailer,
@@ -37,7 +35,7 @@ scheduleR_config <- function(uploadDir = "/home/scheduler/scripts",
                              db.host = "localhost",
                              db.suffix = "scheduleR",
                              port = 3000L){
-  default <- system.file("extdata", "user.config.json", package="scheduleR.basic")
+  default <- system.file("extdata", "user.config.json", package="RscheduleR")
   config <- jsonlite::fromJSON(default, simplifyVector = FALSE)
   config$uploadDir <- uploadDir
   if(!missing(errorNotificationMailAddresses)){
@@ -74,14 +72,12 @@ scheduleR_config <- function(uploadDir = "/home/scheduler/scripts",
 #' @return invisible()
 #' @seealso \code{\link{scheduleR_config}}
 #' @examples
-#' \dontrun{
 #' x <- scheduleR_config()
 #' x
 #' f <- tempfile()
 #' print(x, toJSON=TRUE, file = f)
 #' 
 #' jsonlite::fromJSON(f, simplifyVector = FALSE)
-#' }
 print.scheduleR_config <- function(x, toJSON=FALSE, file=tempfile(), ...){
   if(toJSON){
     out <- jsonlite::toJSON(x, auto_unbox = TRUE, pretty = TRUE)  

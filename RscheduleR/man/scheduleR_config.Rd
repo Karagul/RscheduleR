@@ -40,7 +40,6 @@ Creates a user.config.json file of a scheduleR instance.
 This file contains information about the mongo database and how to mail results of scheduleR.
 }
 \examples{
-\dontrun{
 x <- scheduleR_config()
 str(x)
 x <- scheduleR_config(db.host = "19.19.19.19", 
@@ -49,6 +48,5 @@ x <- scheduleR_config(db.host = "19.19.19.19",
    mailer.auth.pass = "abc123")
 str(x)
 jsonlite::toJSON(x)
-}
 }
 
