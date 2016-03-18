@@ -23,8 +23,8 @@ devtools::install_github("jwijffels/RscheduleR", subdir = "RscheduleR")
 **Get and run the docker image which starts scheduleR.**
 
 ```
-docker pull bnosac/scheduleR
-docker run -d -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -u root bnosac/scheduleR 
+docker pull bnosac/scheduler
+docker run -d -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -u root bnosac/scheduler 
 ```
 
 *scheduleR is now accessible at port 3000*, so go to IP_ADDRESS_WHERE_YOU_LAUNCHED_IT:3000 to see it.
@@ -67,7 +67,7 @@ When uploading scripts to the scheduleR instance, these are put at /home/schedul
 If you want the MongoDB to be persistent as well as the scripts. You probably want to launch scheduleR as follows. This will make sure the MongoDB is persisted at /opt/scheduler/mongo and the R scripts at /opt/scheduler/scripts.
 
 ```
-docker run --name scheduler -d -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -v /opt/scheduler/mongo:/data/db -v /opt/scheduler/scripts:/home/scheduler/scripts -u root bnosac/scheduleR 
+docker run --name scheduler -d -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -v /opt/scheduler/mongo:/data/db -v /opt/scheduler/scripts:/home/scheduler/scripts -u root bnosac/scheduler 
 ```
 
 MongoDB runs by default without username/password. If you need this, you can contact [http://www.bnosac.be/contact](http://www.bnosac.be/contact)
