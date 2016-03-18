@@ -18,15 +18,13 @@ Setup
 
 ```
 devtools::install_github("jwijffels/RscheduleR", subdir = "RscheduleR")
-
 ```
 
-**Run the docker image which starts scheduleR.**
+**Get and run the docker image which starts scheduleR.**
 
 ```
 docker pull bnosac/scheduleR
 docker run -d -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -u root bnosac/scheduleR 
-
 ```
 
 **Schedule a task (R script)** which runs for example every minute on every day. Tasks are specified using cron patterns. [https://en.wikipedia.org/wiki/Cron](https://en.wikipedia.org/wiki/Cron)
