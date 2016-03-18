@@ -25,7 +25,7 @@ devtools::install_github("jwijffels/RscheduleR", subdir = "RscheduleR")
 
 ```
 docker pull bnosac/scheduleR
-docker run --name scheduler -it -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -u root bnosac/scheduleR 
+docker run -d -p 27017:27017 -p 3000:3000 -p 3080:80 -e 'mailer_auth_user=please.changeme@google.be' -e 'mailer_auth_pass=fillinyourgooglepwd' -u root bnosac/scheduleR 
 
 ```
 
