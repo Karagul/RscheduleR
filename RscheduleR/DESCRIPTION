@@ -1,0 +1,19 @@
+Package: RscheduleR
+Type: Package
+Title: Interface to scheduleR for scheduling R scripts, Markdown reports and
+    Shiny apps.
+Description: Interface to scheduleR for scheduling R scripts, Markdown reports
+    and Shiny apps. Sets up the default user, and creates an RStudio addin.
+Author: Jan Wijffels <jwijffels@bnosac.be>
+Maintainer: Jan Wijffels <jwijffels@bnosac.be>
+License: AGPL-3 + file LICENSE
+Copyright: BNOSAC <info@bnosac.be>
+URL: https://github.com/jwijffels/RscheduleR
+Version: 1.0.0
+Depends:
+    methods
+Imports:
+    rmongodb (>= 1.8.0),
+    jsonlite,
+    httr
+RoxygenNote: 5.0.1
