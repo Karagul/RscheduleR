@@ -43,6 +43,5 @@ connection$task_create(file = myscript, user = "guest", name = "mysimulation",
   mailOnSuccess = "computersaysyes@bnosac.be", mailOnError = "computersaysno@bnosac.be")
   
 connection$tasks()
-
 ```
 
